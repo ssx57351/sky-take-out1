@@ -1,5 +1,5 @@
 package com.sky.context;
-
+//线程的局部变量
 //上下文类
 public class BaseContext {
 
