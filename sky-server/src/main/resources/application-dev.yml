@@ -1,6 +1,12 @@
+#spring:
+#  profiles:
+#    active: dev   #设置环境
+
 spring:
-  profiles:
-    active: dev   #设置环境
+  config:
+    activate:
+      on-profile:
+        - dev
 
 
 sky:
@@ -12,8 +18,20 @@ sky:
     username: root
     password: 57351
 
-  alioss:   #oss文件上传
-    endpoint: ${sky.alioss.endpoint}
-    access-key-id: ${sky.alioss.access-key-id}
-    access-key-secret: ${sky.alioss.access-key-secret}
-    bucket-name: ${sky.alioss.bucket-name}
+  alioss:
+    #自定义的阿里云OSS配置信息 自己的
+#    endpoint: https://oss-cn-beijing.aliyuncs.com
+#    accessKeyId: LTAI5tNenzPmPdYZBRuZXo5D
+#    accessKeySecret: 1QiCo9YJg1vn4wtYGdtKG1vbV7btH0
+#    bucketName: talismanagement
+
+    endpoint: oss-cn-hangzhou.aliyuncs.com
+    access-key-id: LTAI5tPeFLzsPPT8gG3LPW64
+    access-key-secret: U6k1brOZ8gaOIXv3nXbulGTUzy6Pd7
+    bucket-name: sky-take-out
+
+  redis:  #Redis缓存
+    host: localhost
+    port: 6379
+    password: 123456
+    database: 10
